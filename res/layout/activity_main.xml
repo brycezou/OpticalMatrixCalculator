@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:background="@drawable/bgimg">
+    
+    <LinearLayout   
+    	android:layout_width="fill_parent"  
+    	android:layout_height="wrap_content"  
+    	android:orientation="vertical" >
+    	    
+		<View
+		    android:id="@+id/vFocus"
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"  
+            android:background="#00000000" />
+		
+	   	<LinearLayout   
+    		android:layout_width="fill_parent"  
+    		android:layout_height="fill_parent"  
+    		android:orientation="horizontal" >
+    		<Button  
+        		android:id="@+id/btnA"  
+        		android:layout_width="wrap_content"  
+        		android:layout_height="wrap_content"  
+        		android:onClick="onLoadBtnClicked"
+        		android:text="读入矩阵A"
+        		android:textAppearance="?android:attr/textAppearanceMedium" />  
+        	<Spinner 
+        	    android:id="@+id/SpinnerA"            
+        	    android:layout_width="fill_parent"         
+        	    android:layout_height="wrap_content" />
+        </LinearLayout>
+        
+    	<TableLayout  
+        	android:id="@+id/tableA"  
+        	android:layout_width="fill_parent"  
+        	android:layout_height="wrap_content" >  
+    	</TableLayout>  
+    	
+	   	<View
+            android:layout_height="4dp"
+            android:layout_width="fill_parent"  
+            android:background="#80000000" />
+    
+	   	<LinearLayout   
+    		android:layout_width="fill_parent"  
+    		android:layout_height="fill_parent"  
+    		android:orientation="horizontal" >
+    		<Button  
+        		android:id="@+id/btnB"  
+        		android:layout_width="wrap_content"  
+        		android:layout_height="wrap_content"  
+        		android:onClick="onLoadBtnClicked"
+        		android:text="读入矩阵B"
+        		android:textAppearance="?android:attr/textAppearanceMedium" />  
+           	<Spinner 
+        	    android:id="@+id/SpinnerB"            
+        	    android:layout_width="fill_parent"           
+        	    android:layout_height="wrap_content" />
+        </LinearLayout>
+         
+    	<TableLayout  
+        	android:id="@+id/tableB"  
+        	android:layout_width="fill_parent" 
+        	android:layout_height="wrap_content" >  
+    	</TableLayout>  
+    	
+	   	<View
+            android:layout_height="4dp"
+            android:layout_width="fill_parent"  
+            android:background="#80000000" />
+		<Spinner 
+       		android:id="@+id/SpinnerC"            
+        	android:layout_width="fill_parent"           
+        	android:layout_height="wrap_content" />
+		<View
+            android:layout_height="4dp"
+            android:layout_width="fill_parent"  
+            android:background="#80000000" />
+		
+		<TextView 
+		    android:id="@+id/tvLabel"
+		    android:layout_width="fill_parent"           
+        	android:layout_height="wrap_content" 
+        	android:text="" 
+        	android:paddingLeft="10dp"
+        	android:textAppearance="?android:attr/textAppearanceMedium" />
+    	<TableLayout  
+        	android:id="@+id/tableC"  
+        	android:layout_width="fill_parent" 
+        	android:layout_height="wrap_content" >
+        </TableLayout>  
+        
+	</LinearLayout>
+</ScrollView>
