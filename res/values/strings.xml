@@ -4,5 +4,6 @@
     <string name="app_name">矩阵神器</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="help_name">矩阵神器使用手册</string>
     
 </resources>

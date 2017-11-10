@@ -830,6 +830,8 @@ public class MainActivity extends Activity
 	boolean SingleMatrixInverse(double mtx[][])
 	{
 		Matrix mm = new Matrix(mtx);
+		if(mm.getColumnDimension()!=mm.getRowDimension())
+			return false;
 		Matrix inv;
 		try
 		{
@@ -1144,6 +1146,8 @@ public class MainActivity extends Activity
 	boolean InverseATimesB(double mtxA[][], double mtxB[][])
 	{
 		Matrix mmA = new Matrix(mtxA);
+		if(mmA.getColumnDimension()!=mmA.getRowDimension())
+			return false;
 		Matrix mmB = new Matrix(mtxB);
 		Matrix mmX;
 		try
@@ -1181,6 +1185,8 @@ public class MainActivity extends Activity
 	boolean BTimesInverseA(double mtxA[][], double mtxB[][])
 	{
 		Matrix mmA = new Matrix(mtxA);
+		if(mmA.getColumnDimension()!=mmA.getRowDimension())
+			return false;
 		Matrix mmB = new Matrix(mtxB);
 		Matrix mmX;
 		try
@@ -1314,8 +1320,9 @@ public class MainActivity extends Activity
 	public boolean onCreateOptionsMenu(Menu menu) 
 	{
 		// TODO Auto-generated method stub
-		menu.add(0, Menu.FIRST, 1, "关于作者");
-		menu.add(1, Menu.FIRST+1, 2, "标准计算器");
+		menu.add(0, Menu.FIRST, 1, "关于我们");
+		menu.add(1, Menu.FIRST+1, 2, "使用手册");
+		menu.add(2, Menu.FIRST+2, 3, "标准计算器");
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -1326,15 +1333,29 @@ public class MainActivity extends Activity
 		switch(item.getItemId())
 		{
 		case 1:
-			new AlertDialog.Builder(MainActivity.this).setTitle("关于").setMessage("作者: 邹城\n学校: 南京理工大学\n" +
-				"专业: 控制理论与控制工程\n扣扣: 771966081\n邮箱: 771966081@qq.com\n\n欢迎您反馈使用意见, 我们会尽快完善产品, 谢谢 !").
+			new AlertDialog.Builder(MainActivity.this).setTitle("关于").setMessage("作者: 无有" +
+				"\n扣扣: 771966081\n邮箱: 771966081@qq.com\n\n欢迎您反馈使用意见, 我们会尽快完善产品, 谢谢 !").
 				setNeutralButton("确 定", new DialogInterface.OnClickListener(){ public 
 				void onClick(DialogInterface dialog, int whichButton){} }).show();
 			break;
 		case 2:
-			Intent intent = new Intent();
-			intent.setClassName("com.android.calculator2","com.android.calculator2.Calculator");
-			startActivity(intent);
+			Intent intt = new Intent();
+			intt.setClass(this, HelpActivity.class);
+			startActivity(intt);
+			break;
+		case 3:
+			try
+			{
+				Intent intent = new Intent();
+				intent.setClassName("com.android.calculator2","com.android.calculator2.Calculator");
+				startActivity(intent);
+			}
+			catch(Exception e)
+			{
+				OnShowDlg("无法调用系统计算器");
+			}
+			break;
+		default:
 			break;
 		}
 		return super.onOptionsItemSelected(item);
